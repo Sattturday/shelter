@@ -2,9 +2,9 @@
 
 ## Описание проекта
 
-Shelter - это сайт, состоящий из двух страниц, адаптивный и интерактивный.
-Работа выполнена в рамках курса JavaScript/Front-end 2023Q1 RSSchool по [Макету в figma](https://www.figma.com/file/Yk6EnbY63FyG2PJTFkJDMh/shelter)
-Открыть в браузере [сайт Shelter](https://sattturday.github.io/shelter/)
+- Shelter - это сайт, состоящий из двух страниц, адаптивный и интерактивный.
+- Работа выполнена в рамках курса JavaScript/Front-end 2023Q1 RSSchool по [Макету в figma](https://www.figma.com/file/Yk6EnbY63FyG2PJTFkJDMh/shelter)
+- Открыть в браузере [сайт Shelter](https://sattturday.github.io/shelter/)
 
 ## Ключевые навыки:
 
