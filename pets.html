@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./pages/pets.css">
+  <title>Our pets</title>
+</head>
+
+<body>
+  <div class="background"></div>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__container">
+        <a class="logo logo_pets" href="./index.html">
+          <h1 class="logo-title logo-title_pets">Cozy House</h1>
+          <p class="logo-subtitle logo-subtitle_pets">Shelter for pets in Boston</p>
+        </a>
+
+        <span class="hamburger hamburger_pets">
+          <span class="hamburger__line hamburger__line_pets"></span>
+        </span>
+
+        <nav class="header__menu">
+          <ul class="menu menu_pets">
+            <li><a class="menu-link-pets link" href="./index.html">About the shelter</a></li>
+            <li><a class="menu-link-pets link menu-link_active menu-link_active-pets" href="#">Our
+                pets</a></li>
+            <li><a class="menu-link-pets link" href="./index.html#help">Help the shelter</a></li>
+            <li><a class="menu-link-pets link" href="#contacts">Contacts</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="our-friends our-friends_pets">
+      <div class="wrapper wrapper_pets">
+        <h2 class="our-friends__title">Our friends who are&nbsp;looking for a house</h2>
+        <div class="our-friends__cards">
+          <div class="pagination">
+
+          </div>
+        </div>
+        <div class="pagination__navigation">
+          <button class="pagination__nav-btn pagination__nav-btn-start pagination__nav-btn_inactive">&lt;&lt;</button>
+          <button class="pagination__nav-btn pagination__nav-btn-prev pagination__nav-btn_inactive">&lt;</button>
+          <button class="pagination__nav-btn pagination__nav-btn_active">1</button>
+          <button class="pagination__nav-btn pagination__nav-btn-next">&gt;</button>
+          <button class="pagination__nav-btn pagination__nav-btn-end">&gt;&gt;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="wrapper">
+      <div class="footer__content">
+        <div class="footer__column">
+          <h2 class="footer__title">For questions and suggestions</h2>
+          <a class="footer__item" href="mailto:babara@flylady.su" target="_blank">
+            <img class="mail-icon" src="./assets/icons/mail.svg" alt="mail icon">
+            <p class="footer__text">email@shelter.com</p>
+          </a>
+          <a class="footer__item" href="tel:12345678">
+            <img class="phone-icon" src="./assets/icons/phone.svg" alt="phone icon">
+            <p class="footer__text">+13 674 567 75 54</p>
+          </a>
+        </div>
+        <div class="footer__column">
+          <h2 class="footer__title">We are waiting for your visit</h2>
+          <a class="footer__item" href="https://goo.gl/maps/PCmRiPW7vW2finzP6" target="_blank">
+            <img class="place-icon" src="./assets/icons/pin.svg" alt="place icon">
+            <p class="footer__text">1 Central Street, Boston (entrance from the store)</p>
+          </a>
+          <a class="footer__item footer__item_mobile" href="https://goo.gl/maps/j86wkJ8c7N52LQw77" target="_blank">
+            <img class="place-icon" src="./assets/icons/pin.svg" alt="place icon">
+            <p class="footer__text">18 South Park, London</p>
+          </a>
+        </div>
+        <img class="footer__image" src="./assets/images/footer-puppy.png" alt="very nice puppy">
+      </div>
+    </div>
+  </footer>
+
+  <script src="./pages/index.js" type="module"></script>
+</body>
+
+</html>

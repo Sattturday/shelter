@@ -1,0 +1,83 @@
+.not-only {
+  width: 100%;
+}
+
+.header,
+.not-only {
+  background: url(../assets/images/noise_transparent.png),
+    radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
+  background-attachment: fixed;
+}
+
+.not-only__container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+
+  @include media-medium {
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 30px;
+  }
+
+  @include media-mobile {
+    gap: 105px;
+  }
+}
+
+.not-only__info {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  max-width: 460px;
+  padding-top: 163px;
+
+  @include media-medium {
+    padding: 0 124px;
+    max-width: 100%;
+  }
+
+  @include media-small {
+    padding: 0 74px;
+  }
+
+  @include media-mobile {
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.not-only__title {
+  margin: 0;
+  max-width: 310px;
+  color: $color-light-xl;
+  font-weight: 400;
+  font-size: 4.4rem;
+  line-height: 1.3;
+
+  @include media-mobile {
+    font-size: 2.5rem;
+    letter-spacing: 0.14rem;
+  }
+}
+
+.not-only__subtitle {
+  @include paragraph;
+  color: $color-dark-s;
+}
+
+.not-only__image {
+  width: 58.16%;
+  aspect-ratio: 1/1.04;
+
+  @include media-medium {
+    align-self: flex-end;
+    width: 80.37%;
+  }
+
+  @include media-mobile {
+    width: 86.6%;
+  }
+}

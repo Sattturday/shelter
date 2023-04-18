@@ -1,0 +1,28 @@
+@import '../vendor/normalize.css';
+@import '../vendor/fonts.css';
+
+// abstracts
+@import '../abstract/constants';
+@import '../abstract/placeholders';
+@import '../abstract/mixins';
+
+// base
+@import '../base/base';
+@import '../base/logo';
+@import '../base/hamburger';
+@import '../base/icons';
+@import '../base/buttons';
+@import '../base/card';
+@import '../base/popup';
+@import '../base/card-popup';
+@import '../base/pagination';
+
+// layouts
+@import '../layouts/wrapper';
+@import '../layouts/header';
+@import '../layouts/footer';
+
+// components
+@import '../components/background';
+@import '../components/menu';
+@import '../components/our-friends';

@@ -1,0 +1,102 @@
+.card-popup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-popup__image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 9px 0px 0px 9px;
+
+  @include media-medium {
+    width: 350px;
+    height: 350px;
+  }
+
+  @include media-burger {
+    display: none;
+  }
+}
+
+.card-popup__content {
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  width: 351px;
+  padding-left: 29px;
+
+  @include media-medium {
+    width: 261px;
+    padding-left: 11px;
+  }
+
+  @include media-burger {
+    width: 220px;
+    padding: 10px;
+  }
+}
+
+.card-popup__title {
+  @include h2-title;
+  padding-top: 50px;
+
+  @include media-medium {
+    padding-top: 10px;
+  }
+
+  @include media-burger {
+    text-align: center;
+  }
+}
+
+.card-popup__type-breed {
+  @include h3-title;
+  padding-top: 10px;
+
+  @include media-burger {
+    text-align: center;
+  }
+}
+
+.card-popup__description {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.14;
+  letter-spacing: 0.06em;
+  padding-top: 40px;
+  margin: 0;
+
+  @include media-medium {
+    font-size: 1.3rem;
+    line-height: 1.1;
+    padding-top: 20px;
+  }
+}
+
+.card-popup__list {
+  padding: 42px 15px 0;
+  margin: 0;
+  list-style-image: url(../assets/icons/dot.svg);
+
+  @include media-medium {
+    padding: 20px 15px 0;
+  }
+}
+
+.card-popup__list-item {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  list-style-type: none;
+  padding-bottom: 11px;
+
+  &_bold {
+    font-weight: 700;
+  }
+
+  @include media-medium {
+    padding-bottom: 6px;
+  }
+}

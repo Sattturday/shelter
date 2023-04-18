@@ -1,0 +1,57 @@
+.not-only__button {
+  @include button;
+  width: 207px;
+  background-color: $color-primary;
+
+  @include media-medium {
+    align-self: center;
+  }
+}
+
+.slider__btn {
+  @include slider-btn;
+  @include h3-title;
+  font-weight: 700;
+  color: $color-dark-3xl;
+
+  @include media-small {
+    &_left {
+      order: 2;
+    }
+    &_right {
+      order: 3;
+    }
+  }
+}
+
+.our-friends__button {
+  @include button;
+  width: 261px;
+  background-color: $color-primary;
+  margin: auto;
+}
+
+.pagination__nav-btn {
+  @include slider-btn;
+  @include h3-title;
+  color: $color-dark-3xl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_active {
+    background-color: $color-primary;
+    @include disabled;
+    border: none;
+  }
+
+  &_inactive {
+    @include disabled;
+    border: 2px solid $color-dark-s;
+    color: $color-dark-s;
+  }
+}
+
+.pagination__nav-btn_active {
+  font-family: Arial, Helvetica, sans-serif;
+}

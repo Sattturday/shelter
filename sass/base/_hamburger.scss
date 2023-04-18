@@ -1,0 +1,50 @@
+.hamburger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 22px;
+  @extend %transition;
+
+  @include media-burger {
+    display: inline-block;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  &:before {
+    @include hamburger-line($color-primary);
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    @include hamburger-line($color-primary);
+    bottom: 0;
+    left: 0;
+  }
+
+  &_active {
+    transform: rotate(90deg);
+  }
+}
+
+.hamburger_pets {
+  &:before {
+    @include hamburger-line($color-black);
+  }
+
+  &:after {
+    @include hamburger-line($color-black);
+  }
+}
+
+.hamburger__line {
+  top: calc(50% - 1px);
+  left: 0;
+  @include hamburger-line($color-primary);
+  transform: scale(1);
+
+  &_pets {
+    @include hamburger-line($color-black);
+  }
+}

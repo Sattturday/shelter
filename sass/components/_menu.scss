@@ -1,0 +1,64 @@
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
+  min-height: 24px;
+  @extend %transition;
+
+  @include media-burger {
+    width: 320px;
+    height: 100%;
+    background-color: $color-dark-3xl;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    @extend %transition;
+
+    &_pets {
+      background-color: $color-light-xl;
+    }
+  }
+}
+
+.menu-link {
+  @include menu-link($color-dark-s, $color-light-s);
+
+  &_active {
+    display: block;
+    color: $color-light-s;
+    border-bottom: 3px solid $color-primary;
+    @include disabled;
+    min-height: 21px;
+
+    @include media-burger {
+      @include enabled;
+      cursor: default;
+    }
+  }
+
+  &_active-pets {
+    color: $color-dark-l;
+  }
+
+  @include media-burger {
+    font-family: 'Arial', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.6;
+  }
+}
+
+.menu-link-pets {
+  @include menu-link($color-dark-l, $color-dark-3xl);
+
+  @include media-burger {
+    font-family: 'Arial', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.6;
+  }
+}

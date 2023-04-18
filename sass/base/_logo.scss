@@ -1,0 +1,55 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    .logo-title {
+      color: $color-primary-light;
+    }
+    .logo-subtitle {
+      color: $color-dark-s;
+    }
+  }
+
+  &_pets:hover {
+    .logo-title {
+      color: $color-dark-3xl;
+    }
+    .logo-subtitle {
+      color: $color-dark-3xl;
+    }
+  }
+}
+
+.logo-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  color: $color-primary;
+  @extend %transition;
+
+  &_pets {
+    color: $color-dark-l;
+  }
+}
+
+.logo-subtitle {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 3px;
+  @extend %font-add;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.15;
+  letter-spacing: 0.1em;
+  color: $color-light-xl;
+  @extend %transition;
+
+  &_pets {
+    color: $color-dark-3xl;
+  }
+}
