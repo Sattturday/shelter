@@ -103,37 +103,39 @@ export const initialCards = [
     parasites: ['lice', ' fleas'],
     id: '7',
   },
-]
+];
 
-export const overlay = document.querySelector('.background')
-export const hamburger = document.querySelector('.hamburger')
-export const menuHeader = document.querySelector('.header__menu')
-export const menuLinks = document.querySelectorAll('.link')
+export const burgerData = {
+  overlaySelector: '.background',
+  hamburgerSelector: '.hamburger',
+  menuHeaderSelector: '.header__menu',
+  menuLinkSelector: '.link',
+};
 
 // pagination
-export const containerSelectorPets = '.pagination'
-export const pageLine = document.querySelector('.pagination')
+export const containerSelectorPets = '.pagination';
+export const pageLine = document.querySelector('.pagination');
 export const paginationButtonStart = document.querySelector(
   '.pagination__nav-btn-start'
-)
+);
 export const paginationButtonActive = document.querySelector(
   '.pagination__nav-btn_active'
-)
+);
 export const paginationButtonNext = document.querySelector(
   '.pagination__nav-btn-next'
-)
+);
 export const paginationButtonPrev = document.querySelector(
   '.pagination__nav-btn-prev'
-)
+);
 export const paginationButtonEnd = document.querySelector(
   '.pagination__nav-btn-end'
-)
+);
 
 // slider
-export const containerSelectorSlider = '.slider__track'
-export const btnLeftSlider = document.querySelector('.slider__btn_left')
-export const btnRightSlider = document.querySelector('.slider__btn_right')
-export const carousel = document.querySelector('.slider__track')
-export const itemLeftSelector = '#item-left'
-export const itemRightSelector = '#item-right'
-export const itemActiveSelector = '#item-active'
+export const containerSelectorSlider = '.slider__track';
+export const btnLeftSlider = document.querySelector('.slider__btn_left');
+export const btnRightSlider = document.querySelector('.slider__btn_right');
+export const carousel = document.querySelector('.slider__track');
+export const itemLeftSelector = '#item-left';
+export const itemRightSelector = '#item-right';
+export const itemActiveSelector = '#item-active';
