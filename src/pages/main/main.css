@@ -1,5 +1,5 @@
-@import '../vendor/normalize.css';
-@import '../vendor/fonts.css';
+@import '../../vendor/normalize.css';
+@import '../../vendor/fonts.css';
 .in-addition__credit-card, .help__list-item, .menu-link-pets, .menu-link, .menu, .background, .footer__item, .header__menu, .popup__close-btn, .overlay, .card__button, .card, .pagination__nav-btn, .our-friends__button, .slider__btn, .not-only__button, .hamburger, .logo-subtitle, .logo-title {
   transition: all 0.4s linear;
 }
@@ -728,7 +728,7 @@ body._lock {
 
 .footer {
   padding-top: 40px;
-  background: url(../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
+  background: url(../../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
 }
 .footer .wrapper {
   padding: 0 10px;
@@ -937,7 +937,7 @@ body._lock {
 
 .header,
 .not-only {
-  background: url(../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
+  background: url(../../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
   background-attachment: fixed;
 }
 
@@ -1388,4 +1388,4 @@ body._lock {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=main.css.map */

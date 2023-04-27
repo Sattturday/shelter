@@ -1,7 +1,7 @@
 export const initialCards = [
   {
     name: 'Jennifer',
-    img: './assets/images/pets-jennifer.png',
+    img: '../../assets/images/pets-jennifer.png',
     type: 'Dog',
     breed: 'Labrador',
     description:
@@ -14,7 +14,7 @@ export const initialCards = [
   },
   {
     name: 'Sophia',
-    img: './assets/images/pets-sophia.png',
+    img: '../../assets/images/pets-sophia.png',
     type: 'Dog',
     breed: 'Shih tzu',
     description:
@@ -27,7 +27,7 @@ export const initialCards = [
   },
   {
     name: 'Woody',
-    img: './assets/images/pets-woody.png',
+    img: '../../assets/images/pets-woody.png',
     type: 'Dog',
     breed: 'Golden Retriever',
     description:
@@ -40,7 +40,7 @@ export const initialCards = [
   },
   {
     name: 'Scarlett',
-    img: './assets/images/pets-scarlet.png',
+    img: '../../assets/images/pets-scarlet.png',
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:
@@ -53,7 +53,7 @@ export const initialCards = [
   },
   {
     name: 'Katrine',
-    img: './assets/images/pets-katrine.png',
+    img: '../../assets/images/pets-katrine.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -66,7 +66,7 @@ export const initialCards = [
   },
   {
     name: 'Timmy',
-    img: './assets/images/pets-timmy.png',
+    img: '../../assets/images/pets-timmy.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -79,7 +79,7 @@ export const initialCards = [
   },
   {
     name: 'Freddie',
-    img: './assets/images/pets-freddie.png',
+    img: '../../assets/images/pets-freddie.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -92,7 +92,7 @@ export const initialCards = [
   },
   {
     name: 'Charly',
-    img: './assets/images/pets-charly.png',
+    img: '../../assets/images/pets-charly.png',
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:

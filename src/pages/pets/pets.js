@@ -1,6 +1,6 @@
-import Card from '../components/Card.js';
-import PopupCard from '../components/PopupCard.js';
-import BurgerMenu from '../components/BurgerMenu.js';
+import Card from '../shared/Card.js';
+import PopupCard from '../shared/PopupCard.js';
+import BurgerMenu from '../shared/BurgerMenu.js';
 
 import {
   initialCards,
@@ -12,7 +12,7 @@ import {
   paginationButtonEnd,
   paginationButtonStart,
   paginationButtonPrev,
-} from '../utils/constants.js';
+} from '../../utils/constants.js';
 
 window.onload = function () {
   // render cards for pets

@@ -1,5 +1,5 @@
-@import '../vendor/normalize.css';
-@import '../vendor/fonts.css';
+@import '../../vendor/normalize.css';
+@import '../../vendor/fonts.css';
 
 // abstracts
 @import '../abstract/constants';
@@ -12,10 +12,10 @@
 @import '../base/hamburger';
 @import '../base/icons';
 @import '../base/buttons';
-@import '../base/slider';
 @import '../base/card';
 @import '../base/popup';
 @import '../base/card-popup';
+@import '../base/pagination';
 
 // layouts
 @import '../layouts/wrapper';
@@ -25,8 +25,4 @@
 // components
 @import '../components/background';
 @import '../components/menu';
-@import '../components/not-only';
-@import '../components/about';
 @import '../components/our-friends';
-@import '../components/help';
-@import '../components/in-addition';

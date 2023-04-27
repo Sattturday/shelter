@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "sass sass/less/index.scss pages/index.css",
-    "style-pets": "sass sass/less/pets.scss pages/pets.css",
+    "style-main": "sass src/sass/less/main.scss src/pages/main/main.css",
+    "style-pets": "sass src/sass/less/pets.scss src/pages/pets/pets.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
