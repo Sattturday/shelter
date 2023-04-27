@@ -39,8 +39,8 @@
     "webpack-dev-server": "^4.13.2"
   },
   "dependencies": {
-    "normalize-scss": "^7.0.1",
     "core-js": "^3.30.0",
+    "normalize-scss": "^7.0.1",
     "webpack-mapping-plugin": "^0.1.1"
   }
 }

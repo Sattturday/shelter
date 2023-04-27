@@ -6,7 +6,6 @@ import BurgerMenu from '../shared/BurgerMenu.js';
 import {
   initialCards,
   containerSelectorSlider,
-  containerSelectorPets,
   burgerData,
   btnLeftSlider,
   btnRightSlider,
@@ -14,33 +13,12 @@ import {
   itemLeftSelector,
   itemRightSelector,
   itemActiveSelector,
-  pageLine,
-  paginationButtonNext,
-  paginationButtonActive,
-  paginationButtonEnd,
-  paginationButtonStart,
-  paginationButtonPrev,
 } from '../../utils/constants.js';
 
 window.onload = function () {
   // render cards for main
   if (initialCards && containerSelectorSlider) {
     renderCardsToDomMain(containerSelectorSlider);
-  }
-
-  // render cards for pets
-  if (initialCards && containerSelectorPets) {
-    renderCardsToDomPets(containerSelectorPets);
-  }
-
-  // pagination
-  if (document.querySelector('.our-friends__cards')) {
-    init();
-    window.addEventListener('resize', init);
-    paginationButtonStart.addEventListener('click', rollPageStart);
-    paginationButtonNext.addEventListener('click', rollPageNext);
-    paginationButtonPrev.addEventListener('click', rollPagePrev);
-    paginationButtonEnd.addEventListener('click', rollPageEnd);
   }
 };
 
@@ -122,28 +100,6 @@ const renderCardsToDomMain = (containerSelector) => {
         arrIndexes.slice(6)
       );
       cardsContainer.append(elementsSliderRight);
-
-      addCardClickHandler(cardsContainer);
-    }
-  }
-};
-
-// cards for pets
-const renderCardsToDomPets = (containerSelector) => {
-  if (containerSelector) {
-    let cardsContainer = getCardsContainer(containerSelector);
-
-    if (cardsContainer) {
-      for (let i = 1; i < 7; i++) {
-        const cards = generateCards(initialCards, 8);
-        const cardsPage = generateElementSlider(
-          cards,
-          'pagination__page',
-          `${i}`,
-          getArrRandomIndexes()
-        );
-        cardsContainer.append(cardsPage);
-      }
 
       addCardClickHandler(cardsContainer);
     }
@@ -246,75 +202,3 @@ if (btnRightSlider) {
 if (carousel) {
   carousel.addEventListener('animationend', beforeAnimation);
 }
-
-// pagination
-let count = 0;
-let width;
-
-const init = () => {
-  const pages = document.querySelectorAll('.pagination__page');
-  width = document.querySelector('.our-friends__cards').offsetWidth;
-  pageLine.style.width = width * pages.length + 'px';
-
-  pages.forEach((item) => {
-    item.style.width = width + 'px';
-    item.style.height = 'auto';
-  });
-  rollPage();
-};
-
-const rollPageNext = () => {
-  const pages = document.querySelectorAll('.pagination__page');
-  if (count + 1 < pages.length) {
-    if (count === 0) {
-      paginationButtonStart.classList.remove('pagination__nav-btn_inactive');
-      paginationButtonPrev.classList.remove('pagination__nav-btn_inactive');
-    }
-
-    count++;
-    paginationButtonActive.textContent = `${count + 1}`;
-    rollPage();
-
-    if (count + 1 === pages.length) {
-      paginationButtonNext.classList.add('pagination__nav-btn_inactive');
-      paginationButtonEnd.classList.add('pagination__nav-btn_inactive');
-    }
-  }
-};
-
-function rollPage() {
-  pageLine.style.transform = 'translate(-' + count * width + 'px)';
-}
-
-const rollPagePrev = () => {
-  if (count > 0) {
-    if (count === 5) {
-      paginationButtonNext.classList.remove('pagination__nav-btn_inactive');
-      paginationButtonEnd.classList.remove('pagination__nav-btn_inactive');
-    }
-
-    count--;
-    paginationButtonActive.textContent = `${count + 1}`;
-    rollPage();
-
-    if (count === 0) {
-      paginationButtonStart.classList.add('pagination__nav-btn_inactive');
-      paginationButtonPrev.classList.add('pagination__nav-btn_inactive');
-    }
-  }
-};
-
-const rollPageStart = () => {
-  count = 1;
-  rollPagePrev();
-  paginationButtonNext.classList.remove('pagination__nav-btn_inactive');
-  paginationButtonEnd.classList.remove('pagination__nav-btn_inactive');
-};
-
-const rollPageEnd = () => {
-  const pages = document.querySelectorAll('.pagination__page');
-  count = pages.length - 2;
-  rollPageNext();
-  paginationButtonStart.classList.remove('pagination__nav-btn_inactive');
-  paginationButtonPrev.classList.remove('pagination__nav-btn_inactive');
-};
