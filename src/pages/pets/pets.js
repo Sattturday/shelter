@@ -1,3 +1,4 @@
+import './pets.css';
 import Card from '../shared/Card.js';
 import PopupCard from '../shared/PopupCard.js';
 import BurgerMenu from '../shared/BurgerMenu.js';

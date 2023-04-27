@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./main.css">
   <title>Cozy House</title>
 </head>
 
@@ -27,7 +25,7 @@
         <nav class="header__menu">
           <ul class="menu">
             <li><a class="menu-link link menu-link_active" href="#">About the shelter</a></li>
-            <li><a class="menu-link link" href="../pets/pets.html">Our pets</a></li>
+            <li><a class="menu-link link" href="./pets.html">Our pets</a></li>
             <li><a class="menu-link link" href="#help">Help the shelter</a></li>
             <li><a class="menu-link link" href="#contacts">Contacts</a></li>
           </ul>
@@ -48,14 +46,15 @@
               open heart. He or she will love you more than anybody else in the world, you will see!</p>
             <a href="#our-friends" class="not-only__button">Make a friend</a>
           </div>
-          <img class="not-only__image" src="../../assets/images/start-screen-puppy.png" alt="start screen puppy">
+          <img class="not-only__image" src="<%=require('../../assets/images/start-screen-puppy.png')%>"
+            alt="start screen puppy">
         </div>
       </div>
     </section>
 
     <section class="about">
       <div class="wrapper">
-        <img class="about__image" src="../../assets/images/about-pets.png" alt="">
+        <img class="about__image" src="<%=require('../../assets/images/about-pets.png')%>" alt="">
         <div class="about__description">
           <h2 class="about__title">About the shelter “Cozy&nbsp;House”</h2>
           <p class="about__paragraph">Currently we have 121 dogs and 342 cats on our hands and statistics show that only
@@ -82,7 +81,7 @@
           </div>
           <button class="slider__btn slider__btn_right">&rarr;</button>
         </div>
-        <a href="../pets/pets.html" class="our-friends__button">Get to know the rest</a>
+        <a href="./pets.html" class="our-friends__button">Get to know the rest</a>
       </div>
     </section>
 
@@ -91,39 +90,42 @@
         <h2 class="help__title">How&nbsp;you&nbsp;can&nbsp;help our&nbsp;shelter</h2>
         <ul class="help__list">
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/pet-food.svg" alt="pet food packaging">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/pet-food.svg')%>" alt="pet food packaging">
             <h3 class="help__list-title">Pet food</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/transportation.svg" alt="taxi for pets">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/transportation.svg')%>"
+              alt="taxi for pets">
             <h3 class="help__list-title">Transportation</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/toys.svg" alt="pet ball">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/toys.svg')%>" alt="pet ball">
             <h3 class="help__list-title">Toys</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/bowls-and-cups.svg" alt="pet bowl">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/bowls-and-cups.svg')%>" alt="pet bowl">
             <h3 class="help__list-title">Bowls and cups</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/shampoos.svg" alt="shampoo bottle">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/shampoos.svg')%>" alt="shampoo bottle">
             <h3 class="help__list-title">Shampoos</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/vitamins.svg" alt="pills">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/vitamins.svg')%>" alt="pills">
             <h3 class="help__list-title">Vitamins</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/medicines.svg" alt="syringe">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/medicines.svg')%>" alt="syringe">
             <h3 class="help__list-title">Medicines</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/collars-or-leashes.svg" alt="dog collar">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/collars-or-leashes.svg')%>"
+              alt="dog collar">
             <h3 class="help__list-title">Collars / leashes</h3>
           </li>
           <li class="help__list-item">
-            <img class="help__list-icon" src="../../assets/icons/sleeping-area.svg" alt="house for pets">
+            <img class="help__list-icon" src="<%=require('../../assets/icons/sleeping-area.svg')%>"
+              alt="house for pets">
             <h3 class="help__list-title">Sleeping areas</h3>
           </li>
         </ul>
@@ -133,12 +135,12 @@
     <section class="in-addition">
       <div class="wrapper">
         <div class="in-addition__container">
-          <img class="in-addition__image" src="../../assets/images/donation-dog.png" alt="nice dog">
+          <img class="in-addition__image" src="<%=require('../../assets/images/donation-dog.png')%>" alt="nice dog">
           <div class="in-addition__content">
             <h2 class="in-addition__title">You can also make&nbsp;a&nbsp;donation</h2>
             <p class="in-addition__subtitle">Name of the bank / Type of bank account</p>
             <a href="./main.html" class="in-addition__credit-card">
-              <img class="credit-icon" src="../../assets/icons/credit-card.svg" alt="credit icon">
+              <img class="credit-icon" src="<%=require('../../assets/icons/credit-card.svg')%>" alt="credit icon">
               8380 2880 8028 8791 7435
             </a>
             <p class="in-addition__legal-info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing
@@ -156,31 +158,30 @@
         <div class="footer__column">
           <h2 class="footer__title">For questions and suggestions</h2>
           <a class="footer__item" href="mailto:babara@flylady.su" target="_blank">
-            <img class="mail-icon" src="../../assets/icons/mail.svg" alt="mail icon">
+            <img class="mail-icon" src="<%=require('../../assets/icons/mail.svg')%>" alt="mail icon">
             <p class="footer__text">email@shelter.com</p>
           </a>
           <a class="footer__item" href="tel:12345678">
-            <img class="phone-icon" src="../../assets/icons/phone.svg" alt="phone icon">
+            <img class="phone-icon" src="<%=require('../../assets/icons/phone.svg')%>" alt="phone icon">
             <p class="footer__text">+13 674 567 75 54</p>
           </a>
         </div>
         <div class="footer__column">
           <h2 class="footer__title">We are waiting for your visit</h2>
           <a class="footer__item" href="https://goo.gl/maps/PCmRiPW7vW2finzP6" target="_blank">
-            <img class="place-icon" src="../../assets/icons/pin.svg" alt="place icon">
+            <img class="place-icon" src="<%=require('../../assets/icons/pin.svg')%>" alt="place icon">
             <p class="footer__text">1 Central Street, Boston (entrance from the store)</p>
           </a>
           <a class="footer__item footer__item_mobile" href="https://goo.gl/maps/j86wkJ8c7N52LQw77" target="_blank">
-            <img class="place-icon" src="../../assets/icons/pin.svg" alt="place icon">
+            <img class="place-icon" src="<%=require('../../assets/icons/pin.svg')%>" alt="place icon">
             <p class="footer__text">18 South Park, London</p>
           </a>
         </div>
-        <img class="footer__image" src="../../assets/images/footer-puppy.png" alt="very nice puppy">
+        <img class="footer__image" src="<%=require('../../assets/images/footer-puppy.png')%>" alt="very nice puppy">
       </div>
     </div>
   </footer>
 
-  <script src="./main.js" type="module"></script>
 </body>
 
 </html>

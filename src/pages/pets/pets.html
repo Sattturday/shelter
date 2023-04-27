@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./pets.css">
   <title>Our pets</title>
 </head>
 
@@ -15,7 +13,7 @@
   <header class="header">
     <div class="wrapper">
       <div class="header__container">
-        <a class="logo logo_pets" href="../main/main.html">
+        <a class="logo logo_pets" href="./main.html">
           <h1 class="logo-title logo-title_pets">Cozy House</h1>
           <p class="logo-subtitle logo-subtitle_pets">Shelter for pets in Boston</p>
         </a>
@@ -26,10 +24,10 @@
 
         <nav class="header__menu">
           <ul class="menu menu_pets">
-            <li><a class="menu-link-pets link" href="../main/main.html">About the shelter</a></li>
+            <li><a class="menu-link-pets link" href="./main.html">About the shelter</a></li>
             <li><a class="menu-link-pets link menu-link_active menu-link_active-pets" href="#">Our
                 pets</a></li>
-            <li><a class="menu-link-pets link" href="../main/main.html#help">Help the shelter</a></li>
+            <li><a class="menu-link-pets link" href="./main.html#help">Help the shelter</a></li>
             <li><a class="menu-link-pets link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
@@ -64,31 +62,30 @@
         <div class="footer__column">
           <h2 class="footer__title">For questions and suggestions</h2>
           <a class="footer__item" href="mailto:babara@flylady.su" target="_blank">
-            <img class="mail-icon" src="../../assets/icons/mail.svg" alt="mail icon">
+            <img class="mail-icon" src="<%=require('../../assets/icons/mail.svg')%>" alt="mail icon">
             <p class="footer__text">email@shelter.com</p>
           </a>
           <a class="footer__item" href="tel:12345678">
-            <img class="phone-icon" src="../../assets/icons/phone.svg" alt="phone icon">
+            <img class="phone-icon" src="<%=require('../../assets/icons/phone.svg')%>" alt="phone icon">
             <p class="footer__text">+13 674 567 75 54</p>
           </a>
         </div>
         <div class="footer__column">
           <h2 class="footer__title">We are waiting for your visit</h2>
           <a class="footer__item" href="https://goo.gl/maps/PCmRiPW7vW2finzP6" target="_blank">
-            <img class="place-icon" src="../../assets/icons/pin.svg" alt="place icon">
+            <img class="place-icon" src="<%=require('../../assets/icons/pin.svg')%>" alt="place icon">
             <p class="footer__text">1 Central Street, Boston (entrance from the store)</p>
           </a>
           <a class="footer__item footer__item_mobile" href="https://goo.gl/maps/j86wkJ8c7N52LQw77" target="_blank">
-            <img class="place-icon" src="../../assets/icons/pin.svg" alt="place icon">
+            <img class="place-icon" src="<%=require('../../assets/icons/pin.svg')%>" alt="place icon">
             <p class="footer__text">18 South Park, London</p>
           </a>
         </div>
-        <img class="footer__image" src="../../assets/images/footer-puppy.png" alt="very nice puppy">
+        <img class="footer__image" src="<%=require('../../assets/images/footer-puppy.png')%>" alt="very nice puppy">
       </div>
     </div>
   </footer>
 
-  <script src="./pets.js" type="module"></script>
 </body>
 
 </html>

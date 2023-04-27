@@ -529,7 +529,7 @@ body._lock {
 .card-popup__list {
   padding: 42px 15px 0;
   margin: 0;
-  list-style-image: url(../assets/icons/dot.svg);
+  list-style-image: url(../../assets/icons/dot.svg);
 }
 @media (max-width: 1024px) {
   .card-popup__list {
@@ -694,7 +694,7 @@ body._lock {
 
 .footer {
   padding-top: 40px;
-  background: url(../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
+  background: url(../../assets/images/noise_transparent.png), radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
 }
 .footer .wrapper {
   padding: 0 10px;

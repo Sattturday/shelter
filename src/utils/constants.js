@@ -1,7 +1,16 @@
+import jenniferImage from '../assets/images/pets-jennifer.png';
+import sophiaImage from '../assets/images/pets-sophia.png';
+import woodyImage from '../assets/images/pets-woody.png';
+import scarletImage from '../assets/images/pets-scarlet.png';
+import katrineImage from '../assets/images/pets-katrine.png';
+import timmyImage from '../assets/images/pets-timmy.png';
+import freddieImage from '../assets/images/pets-freddie.png';
+import charlyImage from '../assets/images/pets-charly.png';
+
 export const initialCards = [
   {
     name: 'Jennifer',
-    img: '../../assets/images/pets-jennifer.png',
+    img: jenniferImage,
     type: 'Dog',
     breed: 'Labrador',
     description:
@@ -14,7 +23,7 @@ export const initialCards = [
   },
   {
     name: 'Sophia',
-    img: '../../assets/images/pets-sophia.png',
+    img: sophiaImage,
     type: 'Dog',
     breed: 'Shih tzu',
     description:
@@ -27,7 +36,7 @@ export const initialCards = [
   },
   {
     name: 'Woody',
-    img: '../../assets/images/pets-woody.png',
+    img: woodyImage,
     type: 'Dog',
     breed: 'Golden Retriever',
     description:
@@ -40,7 +49,7 @@ export const initialCards = [
   },
   {
     name: 'Scarlett',
-    img: '../../assets/images/pets-scarlet.png',
+    img: scarletImage,
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:
@@ -53,7 +62,7 @@ export const initialCards = [
   },
   {
     name: 'Katrine',
-    img: '../../assets/images/pets-katrine.png',
+    img: katrineImage,
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -66,7 +75,7 @@ export const initialCards = [
   },
   {
     name: 'Timmy',
-    img: '../../assets/images/pets-timmy.png',
+    img: timmyImage,
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -79,7 +88,7 @@ export const initialCards = [
   },
   {
     name: 'Freddie',
-    img: '../../assets/images/pets-freddie.png',
+    img: freddieImage,
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -92,7 +101,7 @@ export const initialCards = [
   },
   {
     name: 'Charly',
-    img: '../../assets/images/pets-charly.png',
+    img: charlyImage,
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:

@@ -625,7 +625,7 @@ body._lock {
 .card-popup__list {
   padding: 42px 15px 0;
   margin: 0;
-  list-style-image: url(../assets/icons/dot.svg);
+  list-style-image: url(../../assets/icons/dot.svg);
 }
 @media (max-width: 1024px) {
   .card-popup__list {
