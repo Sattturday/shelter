@@ -115,10 +115,10 @@ export const initialCards = [
 ];
 
 export const burgerData = {
-  overlaySelector: '.background',
-  hamburgerSelector: '.hamburger',
-  menuHeaderSelector: '.header__menu',
-  menuLinkSelector: '.link',
+  overlayClass: 'background',
+  hamburgerClass: 'hamburger',
+  menuHeaderClass: 'header__menu',
+  menuLinkClass: 'link',
 };
 
 // pagination

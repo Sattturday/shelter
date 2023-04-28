@@ -13,7 +13,7 @@ import {
   paginationButtonEnd,
   paginationButtonStart,
   paginationButtonPrev,
-} from '../../utils/constants.js';
+} from '../../data/constants.js';
 
 window.onload = function () {
   // render cards for pets

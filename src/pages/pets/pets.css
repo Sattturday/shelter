@@ -1,6 +1,6 @@
 @import '../../vendor/normalize.css';
 @import '../../vendor/fonts.css';
-.menu-link-pets, .menu-link, .menu, .background, .footer__item, .header__menu, .popup__close-btn, .overlay, .card__button, .card, .pagination__nav-btn, .our-friends__button, .slider__btn, .not-only__button, .hamburger, .logo-subtitle, .logo-title {
+.footer__item, .header__menu, .popup__close-btn, .overlay, .card__button, .card, .pagination__nav-btn, .our-friends__button, .slider__btn, .not-only__button, .hamburger, .menu-link-pets, .menu-link, .menu, .background, .logo-subtitle, .logo-title {
   transition: all 0.4s linear;
 }
 
@@ -89,6 +89,100 @@ body._lock {
 }
 .logo-subtitle_pets {
   color: #292929;
+}
+
+.background {
+  visibility: hidden;
+  position: absolute;
+  background: rgba(41, 41, 41, 0.6);
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+.background_active {
+  visibility: visible;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
+  min-height: 24px;
+}
+@media (max-width: 767px) {
+  .menu {
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .menu_pets {
+    background-color: #fff;
+  }
+}
+
+.menu-link {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #cdcdcd;
+}
+.menu-link:hover {
+  color: #fafafa;
+}
+.menu-link_active {
+  display: block;
+  color: #fafafa;
+  border-bottom: 3px solid #f1cdb3;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 21px;
+}
+@media (max-width: 767px) {
+  .menu-link_active {
+    pointer-events: auto;
+    cursor: default;
+  }
+}
+.menu-link_active-pets {
+  color: #545454;
+}
+@media (max-width: 767px) {
+  .menu-link {
+    font-family: "Arial", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.6;
+  }
+}
+
+.menu-link-pets {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #545454;
+}
+.menu-link-pets:hover {
+  color: #292929;
+}
+@media (max-width: 767px) {
+  .menu-link-pets {
+    font-family: "Arial", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.6;
+  }
 }
 
 .hamburger {
@@ -800,100 +894,6 @@ body._lock {
 @media (max-width: 720px) {
   .footer__image {
     width: 86.67%;
-  }
-}
-
-.background {
-  visibility: hidden;
-  position: absolute;
-  background: rgba(41, 41, 41, 0.6);
-  height: 100%;
-  width: 100%;
-  z-index: 9;
-}
-.background_active {
-  visibility: visible;
-}
-
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  gap: 35px;
-  min-height: 24px;
-}
-@media (max-width: 767px) {
-  .menu {
-    width: 320px;
-    height: 100%;
-    background-color: #292929;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  }
-  .menu_pets {
-    background-color: #fff;
-  }
-}
-
-.menu-link {
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  text-decoration: none;
-  color: #cdcdcd;
-}
-.menu-link:hover {
-  color: #fafafa;
-}
-.menu-link_active {
-  display: block;
-  color: #fafafa;
-  border-bottom: 3px solid #f1cdb3;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 21px;
-}
-@media (max-width: 767px) {
-  .menu-link_active {
-    pointer-events: auto;
-    cursor: default;
-  }
-}
-.menu-link_active-pets {
-  color: #545454;
-}
-@media (max-width: 767px) {
-  .menu-link {
-    font-family: "Arial", Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 3.2rem;
-    line-height: 1.6;
-  }
-}
-
-.menu-link-pets {
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  text-decoration: none;
-  color: #545454;
-}
-.menu-link-pets:hover {
-  color: #292929;
-}
-@media (max-width: 767px) {
-  .menu-link-pets {
-    font-family: "Arial", Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 3.2rem;
-    line-height: 1.6;
   }
 }
 

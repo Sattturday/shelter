@@ -4,7 +4,7 @@
   "description": "- Info\r - Figma\r - GitHub Pages\r - Планы на будущее",
   "main": "index.js",
   "scripts": {
-    "style-main": "sass src/sass/less/main.scss src/pages/main/main.css",
+    "style-main": "sass src/sass/less/main.scss:src/pages/main/main.css",
     "style-pets": "sass src/sass/less/pets.scss src/pages/pets/pets.css",
     "build": "webpack --mode production",
     "dev": "webpack serve",
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "core-js": "^3.30.0",
+    "node-sass": "^8.0.0",
     "normalize-scss": "^7.0.1",
     "webpack-mapping-plugin": "^0.1.1"
   }

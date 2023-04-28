@@ -1,28 +1,30 @@
 export default class BurgerMenu {
   constructor({
-    overlaySelector,
-    hamburgerSelector,
-    menuHeaderSelector,
-    menuLinkSelector,
+    overlayClass,
+    hamburgerClass,
+    menuHeaderClass,
+    menuLinkClass,
   }) {
-    this._overlay = document.querySelector(overlaySelector);
-    this._hamburger = document.querySelector(hamburgerSelector);
-    this._menuHeader = document.querySelector(menuHeaderSelector);
-    this._menuLinks = document.querySelectorAll(menuLinkSelector);
+    this._overlay = document.querySelector(`.${overlayClass}`);
+    this._hamburger = document.querySelector(`.${hamburgerClass}`);
+    this._menuHeader = document.querySelector(`.${menuHeaderClass}`);
+    this._menuLinks = document.querySelectorAll(`.${menuLinkClass}`);
     this._toggleVisibility = this._toggleVisibility.bind(this);
     this._handleClickLink = this._handleClickLink.bind(this);
+    this._hamburgerActiveClass = `${hamburgerClass}_active`;
+    this._menuHeaderActiveClass = `${menuHeaderClass}_active`;
+    this._overlayActiveClass = `${overlayClass}_active`;
   }
 
   _toggleVisibility() {
-    console.log(this._hamburger);
-    this._hamburger.classList.toggle('hamburger_active');
-    this._menuHeader.classList.toggle('header__menu_active');
-    this._overlay.classList.toggle('background_active');
+    this._hamburger.classList.toggle(this._hamburgerActiveClass);
+    this._menuHeader.classList.toggle(this._menuHeaderActiveClass);
+    this._overlay.classList.toggle(this._overlayActiveClass);
     document.body.classList.toggle('_lock');
   }
 
   _handleClickLink() {
-    if (this._hamburger.classList.contains('hamburger_active')) {
+    if (this._hamburger.classList.contains(this._hamburgerActiveClass)) {
       this._toggleVisibility();
     }
   }
@@ -37,7 +39,7 @@ export default class BurgerMenu {
     }
 
     this._menuHeader.addEventListener('click', (evt) => {
-      if (evt.target.classList.contains('header__menu_active')) {
+      if (evt.target.classList.contains(this._menuHeaderActiveClass)) {
         this._toggleVisibility();
       }
     });

@@ -13,7 +13,7 @@ import {
   itemLeftSelector,
   itemRightSelector,
   itemActiveSelector,
-} from '../../utils/constants.js';
+} from '../../data/constants.js';
 
 window.onload = function () {
   // render cards for main
