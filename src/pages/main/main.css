@@ -471,7 +471,7 @@ body._lock {
 }
 .transition-left {
   animation-name: move-left;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 
 @keyframes move-right {
@@ -484,7 +484,7 @@ body._lock {
 }
 .transition-right {
   animation-name: move-right;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 
 .card {
@@ -1146,24 +1146,24 @@ body._lock {
 }
 
 .our-friends__cards {
-  max-width: 1200px;
+  width: 1240px;
   display: flex;
   gap: 40px;
   overflow: hidden;
 }
 @media (max-width: 1279px) {
   .our-friends__cards {
-    max-width: 890px;
+    max-width: 930px;
   }
 }
 @media (max-width: 1024px) {
   .our-friends__cards {
-    max-width: 580px;
+    max-width: 610px;
   }
 }
 @media (max-width: 764px) {
   .our-friends__cards {
-    max-width: 270px;
+    max-width: 310px;
   }
 }
 

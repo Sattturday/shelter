@@ -65,7 +65,7 @@
 
 .transition-left {
   animation-name: move-left;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 
 @keyframes move-right {
@@ -79,5 +79,5 @@
 
 .transition-right {
   animation-name: move-right;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }

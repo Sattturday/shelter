@@ -8,15 +8,15 @@ export default class Section {
     this._container.innerHTML = '';
   }
 
-  renderItems(items) {
+  renderItems(items, indexes) {
     this._clear();
 
-    items.reverse().forEach((item) => {
-      this._renderer(item);
+    indexes.forEach((index) => {
+      this._renderer(items[index]);
     });
   }
 
   setItem(element) {
-    this._container.prepend(element);
+    this._container.append(element);
   }
 }

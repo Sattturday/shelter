@@ -26,20 +26,20 @@
 }
 
 .our-friends__cards {
-  max-width: 1200px;
+  width: 1240px;
   display: flex;
   gap: 40px;
   overflow: hidden;
 
   @include slider-l {
-    max-width: 890px;
+    max-width: 930px;
   }
 
   @include media-medium {
-    max-width: 580px;
+    max-width: 610px;
   }
 
   @include slider-s {
-    max-width: 270px;
+    max-width: 310px;
   }
 }

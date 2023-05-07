@@ -4,15 +4,18 @@
 }
 
 .pagination__page {
-  min-width: 1200px;
+  min-width: 1240px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 40px;
   row-gap: 30px;
   justify-content: center;
 
+  div {
+    margin: 0 20px;
+  }
+
   @include slider-l {
-    min-width: 890px;
+    min-width: 930px;
     > :nth-child(7) {
       display: none;
     }
@@ -23,11 +26,11 @@
   }
 
   @include media-medium {
-    min-width: 580px;
+    min-width: 620px;
   }
 
   @include slider-s {
-    min-width: 270px;
+    min-width: 310px;
     > :nth-child(4) {
       display: none;
     }

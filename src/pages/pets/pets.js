@@ -2,12 +2,18 @@ import './pets.css';
 import Card from '../shared/Card.js';
 import PopupCard from '../shared/PopupCard.js';
 import BurgerMenu from '../shared/BurgerMenu.js';
+import Showcase from './components/Showcase.js';
+import Counter from './components/Counter';
+import Section from '../shared/Section.js';
+import getArrIndexes from '../../utils/getArrIndexes.js';
+import toggleButtons from '../../utils/toggleButtons';
+import createElement from '../../utils/createElement';
+import { dataPets } from '../../data/dataPets';
 
 import {
-  initialCards,
-  containerSelectorPets,
+  cardsSectionContainerSelector,
+  cardsSectionSelector,
   burgerData,
-  pageLine,
   paginationButtonNext,
   paginationButtonActive,
   paginationButtonEnd,
@@ -16,100 +22,59 @@ import {
 } from '../../data/constants.js';
 
 window.onload = function () {
-  // render cards for pets
-  if (initialCards && containerSelectorPets) {
-    renderCardsToDomPets(containerSelectorPets);
-  }
-
-  // pagination
-  init();
-  window.addEventListener('resize', init);
-  paginationButtonStart.addEventListener('click', rollPageStart);
-  paginationButtonNext.addEventListener('click', rollPageNext);
-  paginationButtonPrev.addEventListener('click', rollPagePrev);
-  paginationButtonEnd.addEventListener('click', rollPageEnd);
+  // рендер карточек при закрузке
+  renderCards(1);
 };
+
+const cardIndexes = getArrIndexes(); // иидентификаторы (48шт)
+const cards = []; // экземпляры карточек(8шт)
+dataPets.forEach((cardData) => cards.push(new Card(cardData)));
 
 // burger
 const burgerMenu = new BurgerMenu(burgerData);
-burgerMenu.setEventListeners();
 
-// load cards
-const getArrRandomIndexes = () => {
-  const arr = [];
-  while (arr.length < 8) {
-    let r = Math.floor(Math.random() * 8);
-    if (arr.indexOf(r) === -1) arr.push(r);
-  }
+// витрина
+const showcase = new Showcase(
+  cardIndexes,
+  cardsSectionContainerSelector,
+  handleCardClick
+);
 
-  return arr;
-};
+// отрисовка карточек
+const cardsSection = new Section(
+  (cardItem) => cardsSection.setItem(cardItem.generateCard()),
+  cardsSectionSelector
+);
 
-const getCardsContainer = (containerSelector) => {
-  let containerCards = document.querySelector(containerSelector);
-  if (containerCards) {
-    containerCards.innerHTML = '';
-    return containerCards;
-  }
-};
+// pagination
+const counter = new Counter(
+  createElement,
+  paginationButtonStart,
+  paginationButtonPrev,
+  paginationButtonActive,
+  paginationButtonNext,
+  paginationButtonEnd,
+  (count) => renderCards(count),
+  toggleButtons
+);
 
-const generateCards = (data, length) => {
-  const cards = [];
-  data.forEach((cardData) => cards.push(new Card(cardData)));
-  data.forEach((cardData) => cards.push(new Card(cardData)));
-
-  const cardsElements = cards.slice(0, length);
-  return cardsElements;
-};
-
-const generateElementSlider = (cards, className, id, indexes) => {
-  const elementSlider = document.createElement('div');
-  elementSlider.className = className;
-  elementSlider.setAttribute('id', id);
-
-  indexes.forEach((i) => {
-    elementSlider.append(cards[i].generateCard());
-  });
-
-  return elementSlider;
-};
-
-// cards for pets
-const renderCardsToDomPets = (containerSelector) => {
-  if (containerSelector) {
-    let cardsContainer = getCardsContainer(containerSelector);
-
-    if (cardsContainer) {
-      for (let i = 1; i < 7; i++) {
-        const cards = generateCards(initialCards, 8);
-        const cardsPage = generateElementSlider(
-          cards,
-          'pagination__page',
-          `${i}`,
-          getArrRandomIndexes()
-        );
-        cardsContainer.append(cardsPage);
-      }
-
-      addCardClickHandler(cardsContainer);
-    }
-  }
-};
+// отрисовка карточек
+function renderCards(indexPage) {
+  cardsSection.renderItems(cards, showcase.getIndexesPage(indexPage));
+}
 
 // popup for cards
-const addCardClickHandler = (cardsContainer) => {
-  cardsContainer.addEventListener('click', (e) => {
-    if (e.target.closest('.card')) {
-      let clickedCardId = e.target.closest('.card').getAttribute('data-id');
-      let clickedCardData = getClickedData(clickedCardId);
+function handleCardClick(e) {
+  if (e.target.closest('.card')) {
+    let clickedCardId = e.target.closest('.card').getAttribute('data-id');
+    let clickedCardData = getClickedData(clickedCardId);
 
-      renderCardPopupWindow(clickedCardData);
-    }
-  });
-};
+    renderCardPopupWindow(clickedCardData);
+  }
+}
 
 const getClickedData = (id) => {
-  return initialCards.find((card) => card.id == id);
+  return dataPets.find((card) => card.id == id);
 };
 
 const renderCardPopupWindow = (cardData) => {
@@ -117,79 +82,8 @@ const renderCardPopupWindow = (cardData) => {
   popupCard.renderPopupCard();
 };
 
-// pagination
-let count = 0;
-let width;
-
-const init = () => {
-  console.log('resize');
-  const pages = document.querySelectorAll('.pagination__page');
-  width = document.querySelector('.our-friends__cards').offsetWidth;
-  console.log(width);
-  pageLine.style.width = width * pages.length + 'px';
-
-  pages.forEach((item) => {
-    item.style.width = width + 'px';
-    item.style.height = 'auto';
-  });
-  rollPage();
-};
-
-const rollPageNext = () => {
-  const pages = document.querySelectorAll('.pagination__page');
-  if (count + 1 < pages.length) {
-    if (count === 0) {
-      paginationButtonStart.classList.remove('pagination__nav-btn_inactive');
-      paginationButtonPrev.classList.remove('pagination__nav-btn_inactive');
-    }
-
-    count++;
-    console.log(count);
-    paginationButtonActive.textContent = `${count + 1}`;
-    rollPage();
-
-    if (count + 1 === pages.length) {
-      paginationButtonNext.classList.add('pagination__nav-btn_inactive');
-      paginationButtonEnd.classList.add('pagination__nav-btn_inactive');
-    }
-  }
-};
-
-function rollPage() {
-  pageLine.style.transform = 'translate(-' + count * width + 'px)';
-}
-
-const rollPagePrev = () => {
-  if (count > 0) {
-    if (count === 5) {
-      paginationButtonNext.classList.remove('pagination__nav-btn_inactive');
-      paginationButtonEnd.classList.remove('pagination__nav-btn_inactive');
-    }
-
-    count--;
-    paginationButtonActive.textContent = `${count + 1}`;
-    rollPage();
-
-    if (count === 0) {
-      paginationButtonStart.classList.add('pagination__nav-btn_inactive');
-      paginationButtonPrev.classList.add('pagination__nav-btn_inactive');
-    }
-  }
-};
-
-const rollPageStart = () => {
-  console.log('start');
-  count = 1;
-  rollPagePrev();
-  paginationButtonNext.classList.remove('pagination__nav-btn_inactive');
-  paginationButtonEnd.classList.remove('pagination__nav-btn_inactive');
-};
-
-const rollPageEnd = () => {
-  console.log('end');
-  const pages = document.querySelectorAll('.pagination__page');
-  count = pages.length - 2;
-  rollPageNext();
-  paginationButtonStart.classList.remove('pagination__nav-btn_inactive');
-  paginationButtonPrev.classList.remove('pagination__nav-btn_inactive');
-};
+// слушатели
+burgerMenu.setEventListeners(); //бургер меню
+window.addEventListener('resize', () => renderCards(1)); // рендер карточек при изменении ширины страницы
+showcase.setEventListener(); // попапы для карточек
+counter.setEventListeners(showcase.getCardsCount()); // pagination

@@ -2,9 +2,11 @@ import './main.css';
 import Card from '../shared/Card.js';
 import PopupCard from '../shared/PopupCard.js';
 import BurgerMenu from '../shared/BurgerMenu.js';
+import getRandomNumbers from '../../utils/getRandomNumbers';
+
+import { dataPets } from '../../data/dataPets';
 
 import {
-  initialCards,
   containerSelectorSlider,
   burgerData,
   btnLeftSlider,
@@ -17,7 +19,7 @@ import {
 
 window.onload = function () {
   // render cards for main
-  if (initialCards && containerSelectorSlider) {
+  if (dataPets && containerSelectorSlider) {
     renderCardsToDomMain(containerSelectorSlider);
   }
 };
@@ -27,16 +29,6 @@ const burgerMenu = new BurgerMenu(burgerData);
 burgerMenu.setEventListeners();
 
 // load cards
-const getArrRandomIndexes = () => {
-  const arr = [];
-  while (arr.length < 8) {
-    let r = Math.floor(Math.random() * 8);
-    if (arr.indexOf(r) === -1) arr.push(r);
-  }
-
-  return arr;
-};
-
 const getCardsContainer = (containerSelector) => {
   let containerCards = document.querySelector(containerSelector);
   if (containerCards) {
@@ -72,8 +64,8 @@ const renderCardsToDomMain = (containerSelector) => {
     let cardsContainer = getCardsContainer(containerSelector);
 
     if (cardsContainer) {
-      const cards = generateCards(initialCards, 9);
-      const arrIndexes = getArrRandomIndexes();
+      const cards = generateCards(dataPets, 9);
+      const arrIndexes = getRandomNumbers();
       const elementEnd = arrIndexes[0];
       arrIndexes.push(elementEnd);
 
@@ -119,7 +111,7 @@ const addCardClickHandler = (cardsContainer) => {
 };
 
 const getClickedData = (id) => {
-  return initialCards.find((card) => card.id == id);
+  return dataPets.find((card) => card.id == id);
 };
 
 const renderCardPopupWindow = (cardData) => {
@@ -143,9 +135,7 @@ const moveRight = () => {
 const fillChangedItem = (changedItem, arrNewIndexes) => {
   changedItem.innerHTML = '';
   for (let i = 0; i < 3; i++) {
-    const card = new Card(
-      initialCards.find((card) => card.id == arrNewIndexes[i])
-    );
+    const card = new Card(dataPets.find((card) => card.id == arrNewIndexes[i]));
     changedItem.append(card.generateCard());
   }
 };

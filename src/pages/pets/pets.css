@@ -1,6 +1,6 @@
 @import '../../vendor/normalize.css';
 @import '../../vendor/fonts.css';
-.footer__item, .header__menu, .popup__close-btn, .overlay, .card__button, .card, .pagination__nav-btn, .our-friends__button, .slider__btn, .not-only__button, .hamburger, .menu-link-pets, .menu-link, .menu, .background, .logo-subtitle, .logo-title {
+.footer__item, .header__menu, .overlay, .card__button, .card, .our-friends__button, .not-only__button, .hamburger, .menu-link-pets, .menu-link, .menu, .background, .logo-subtitle, .logo-title {
   transition: all 0.4s linear;
 }
 
@@ -316,6 +316,7 @@ body._lock {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  transition: background-color 0.4s linear;
   margin: 0;
   font-weight: 400;
   font-size: 2rem;
@@ -327,7 +328,7 @@ body._lock {
 .slider__btn:hover {
   background-color: #fddcc4;
 }
-@media (max-width: 720px) {
+@media (max-width: 764px) {
   .slider__btn_left {
     order: 2;
   }
@@ -365,6 +366,7 @@ body._lock {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  transition: background-color 0.4s linear;
   margin: 0;
   font-weight: 400;
   font-size: 2rem;
@@ -402,6 +404,7 @@ body._lock {
 }
 
 .card {
+  margin: 0 45px;
   background-color: #fafafa;
   border-radius: 9px;
   width: 270px;
@@ -418,6 +421,16 @@ body._lock {
 }
 .card:hover .card__button {
   background-color: #fddcc4;
+}
+@media (max-width: 1279px) {
+  .card {
+    margin: 0 20px;
+  }
+}
+@media (max-width: 764px) {
+  .card {
+    margin: 0 15px;
+  }
 }
 
 .card__image {
@@ -497,6 +510,7 @@ body._lock {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  transition: background-color 0.4s linear;
   margin: 0;
   font-weight: 400;
   font-size: 2rem;
@@ -654,16 +668,18 @@ body._lock {
 }
 
 .pagination__page {
-  min-width: 1200px;
+  min-width: 1240px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 40px;
   row-gap: 30px;
   justify-content: center;
 }
+.pagination__page div {
+  margin: 0 20px;
+}
 @media (max-width: 1279px) {
   .pagination__page {
-    min-width: 890px;
+    min-width: 930px;
   }
   .pagination__page > :nth-child(7) {
     display: none;
@@ -674,12 +690,12 @@ body._lock {
 }
 @media (max-width: 1024px) {
   .pagination__page {
-    min-width: 580px;
+    min-width: 620px;
   }
 }
-@media (max-width: 639px) {
+@media (max-width: 764px) {
   .pagination__page {
-    min-width: 270px;
+    min-width: 310px;
   }
   .pagination__page > :nth-child(4) {
     display: none;
@@ -726,7 +742,6 @@ body._lock {
   }
 }
 .wrapper_slider {
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -934,24 +949,24 @@ body._lock {
 }
 
 .our-friends__cards {
-  max-width: 1200px;
+  width: 1240px;
   display: flex;
   gap: 40px;
   overflow: hidden;
 }
 @media (max-width: 1279px) {
   .our-friends__cards {
-    max-width: 890px;
+    max-width: 930px;
   }
 }
 @media (max-width: 1024px) {
   .our-friends__cards {
-    max-width: 580px;
+    max-width: 610px;
   }
 }
-@media (max-width: 639px) {
+@media (max-width: 764px) {
   .our-friends__cards {
-    max-width: 270px;
+    max-width: 310px;
   }
 }
 
