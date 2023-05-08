@@ -663,8 +663,25 @@ body._lock {
 }
 
 .pagination {
+  width: 1240px;
   display: flex;
-  transition: all easy 1s;
+  gap: 40px;
+  overflow: hidden;
+}
+@media (max-width: 1279px) {
+  .pagination {
+    max-width: 930px;
+  }
+}
+@media (max-width: 1024px) {
+  .pagination {
+    max-width: 610px;
+  }
+}
+@media (max-width: 764px) {
+  .pagination {
+    max-width: 310px;
+  }
 }
 
 .pagination__page {
@@ -681,12 +698,6 @@ body._lock {
   .pagination__page {
     min-width: 930px;
   }
-  .pagination__page > :nth-child(7) {
-    display: none;
-  }
-  .pagination__page > :nth-child(8) {
-    display: none;
-  }
 }
 @media (max-width: 1024px) {
   .pagination__page {
@@ -696,15 +707,6 @@ body._lock {
 @media (max-width: 764px) {
   .pagination__page {
     min-width: 310px;
-  }
-  .pagination__page > :nth-child(4) {
-    display: none;
-  }
-  .pagination__page > :nth-child(5) {
-    display: none;
-  }
-  .pagination__page > :nth-child(6) {
-    display: none;
   }
 }
 
@@ -945,28 +947,6 @@ body._lock {
 @media (max-width: 450px) {
   .our-friends__title {
     font-size: 2.5rem;
-  }
-}
-
-.our-friends__cards {
-  width: 1240px;
-  display: flex;
-  gap: 40px;
-  overflow: hidden;
-}
-@media (max-width: 1279px) {
-  .our-friends__cards {
-    max-width: 930px;
-  }
-}
-@media (max-width: 1024px) {
-  .our-friends__cards {
-    max-width: 610px;
-  }
-}
-@media (max-width: 764px) {
-  .our-friends__cards {
-    max-width: 310px;
   }
 }
 

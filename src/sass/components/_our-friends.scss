@@ -24,22 +24,3 @@
   margin: auto;
   text-align: center;
 }
-
-.our-friends__cards {
-  width: 1240px;
-  display: flex;
-  gap: 40px;
-  overflow: hidden;
-
-  @include slider-l {
-    max-width: 930px;
-  }
-
-  @include media-medium {
-    max-width: 610px;
-  }
-
-  @include slider-s {
-    max-width: 310px;
-  }
-}

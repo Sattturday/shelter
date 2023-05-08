@@ -6,7 +6,7 @@ export const burgerData = {
 };
 
 // pagination
-export const cardsSectionContainerSelector = '.our-friends__cards';
+export const cardsSectionContainerSelector = '.pagination';
 export const cardsSectionSelector = '.pagination__page';
 
 export const paginationButtonStart = document.querySelector(

@@ -1,15 +1,14 @@
 export default class Counter {
   constructor(
-    createElement,
     btnStart,
     btnPrev,
     btnActive,
     btnNext,
     btnEnd,
     renderCurrentPage,
-    toggleButtons
+    toggleButtons,
+    getCountCards
   ) {
-    this._createElement = createElement;
     this._btnStart = btnStart;
     this._btnPrev = btnPrev;
     this._btnActive = btnActive;
@@ -19,60 +18,57 @@ export default class Counter {
     this._counter = btnActive.textContent;
     this._renderCurrentPage = renderCurrentPage;
     this._toggleButtons = toggleButtons;
+    this._cardCount = getCountCards;
   }
 
   _handleClickStart() {
     this._counter = 1;
-    this._btnActive.textContent = this._counter;
-    this._toggleButtons([this._btnNext, this._btnEnd], false);
-    this._toggleButtons([this._btnStart, this._btnPrev], true);
+    this._updatePagination();
   }
 
-  _handleClickNext(cardsCount) {
+  _handleClickNext() {
     this._counter++;
-    this._btnActive.textContent = this._counter;
-    this._renderCurrentPage(this._counter);
-
-    if (this._counter > 1) {
-      this._toggleButtons([this._btnStart, this._btnPrev], false);
-    }
-    if (this._counter === 48 / cardsCount) {
-      this._toggleButtons([this._btnNext, this._btnEnd], true);
-    }
+    this._updatePagination();
   }
 
-  _handleClickPrev(cardsCount) {
+  _handleClickPrev() {
     this._counter--;
+    this._updatePagination();
+  }
+
+  _handleClickEnd() {
+    this._counter = 48 / this._cardCount();
+    this._updatePagination();
+  }
+
+  _updatePagination() {
     this._btnActive.textContent = this._counter;
     this._renderCurrentPage(this._counter);
+    this._memoCardCount = this._cardCount();
 
-    if (this._counter < 48 / cardsCount) {
-      this._toggleButtons([this._btnNext, this._btnEnd], false);
-    }
     if (this._counter === 1) {
       this._toggleButtons([this._btnStart, this._btnPrev], true);
     }
+    if (this._counter > 1) {
+      this._toggleButtons([this._btnStart, this._btnPrev], false);
+    }
+    if (this._counter === 48 / this._cardCount()) {
+      this._toggleButtons([this._btnNext, this._btnEnd], true);
+    }
+    if (this._counter < 48 / this._cardCount()) {
+      this._toggleButtons([this._btnNext, this._btnEnd], false);
+    }
   }
 
-  _handleClickEnd(cardsCount) {
-    this._counter = 48 / cardsCount;
-    this._btnActive.textContent = this._counter;
-    this._toggleButtons([this._btnNext, this._btnEnd], true);
-    this._toggleButtons([this._btnStart, this._btnPrev], false);
-  }
-
-  setEventListeners(cardsCount) {
+  setEventListeners() {
+    window.addEventListener('resize', () => {
+      if (this._memoCardCount !== this._cardCount()) {
+        this._handleClickStart();
+      }
+    });
     this._btnStart.addEventListener('click', () => this._handleClickStart());
-    this._btnNext.addEventListener('click', () =>
-      this._handleClickNext(cardsCount)
-    );
-    this._btnPrev.addEventListener('click', () =>
-      this._handleClickPrev(cardsCount)
-    );
-    this._btnEnd.addEventListener('click', () =>
-      this._handleClickEnd(cardsCount)
-    );
+    this._btnNext.addEventListener('click', () => this._handleClickNext());
+    this._btnPrev.addEventListener('click', () => this._handleClickPrev());
+    this._btnEnd.addEventListener('click', () => this._handleClickEnd());
   }
-
-  renderCounter() {}
 }

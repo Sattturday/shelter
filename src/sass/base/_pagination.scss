@@ -1,6 +1,20 @@
 .pagination {
+  width: 1240px;
   display: flex;
-  transition: all easy 1s;
+  gap: 40px;
+  overflow: hidden;
+
+  @include slider-l {
+    max-width: 930px;
+  }
+
+  @include media-medium {
+    max-width: 610px;
+  }
+
+  @include slider-s {
+    max-width: 310px;
+  }
 }
 
 .pagination__page {
@@ -16,13 +30,6 @@
 
   @include slider-l {
     min-width: 930px;
-    > :nth-child(7) {
-      display: none;
-    }
-
-    > :nth-child(8) {
-      display: none;
-    }
   }
 
   @include media-medium {
@@ -31,17 +38,6 @@
 
   @include slider-s {
     min-width: 310px;
-    > :nth-child(4) {
-      display: none;
-    }
-
-    > :nth-child(5) {
-      display: none;
-    }
-
-    > :nth-child(6) {
-      display: none;
-    }
   }
 }
 
