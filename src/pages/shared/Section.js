@@ -1,5 +1,6 @@
 export default class Section {
-  constructor(renderer, containerSelector) {
+  constructor(dataCards, renderer, containerSelector) {
+    this._data = dataCards;
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
@@ -8,11 +9,11 @@ export default class Section {
     this._container.innerHTML = '';
   }
 
-  renderItems(items, indexes) {
+  renderItems(indexes) {
     this._clear();
 
     indexes.forEach((index) => {
-      this._renderer(items[index]);
+      this._renderer(this._data[index]);
     });
   }
 

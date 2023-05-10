@@ -1,12 +1,12 @@
 import './pets.css';
 import Card from '../shared/Card.js';
-import PopupCard from '../shared/PopupCard.js';
 import BurgerMenu from '../shared/BurgerMenu.js';
 import Showcase from './components/Showcase.js';
 import Counter from './components/Counter';
 import Section from '../shared/Section.js';
 import getArrIndexes from '../../utils/getArrIndexes.js';
 import toggleButtons from '../../utils/toggleButtons';
+import handleCardClick from '../../utils/handleCardClick';
 import { dataPets } from '../../data/dataPets';
 
 import {
@@ -21,7 +21,9 @@ import {
 } from '../../data/constants.js';
 
 window.onload = function () {
-  renderCards(1);
+  if (dataPets) {
+    renderCards(1);
+  }
 };
 
 // данные идентификаторов и экземпляры карточек
@@ -34,6 +36,7 @@ const burgerMenu = new BurgerMenu(burgerData);
 
 // отрисовка карточек
 const cardsSection = new Section(
+  cards,
   (cardItem) => cardsSection.setItem(cardItem.generateCard()),
   cardsSectionSelector
 );
@@ -60,27 +63,8 @@ const counter = new Counter(
 
 // отрисовка карточек
 function renderCards(indexPage) {
-  cardsSection.renderItems(cards, showcase.getIndexesPage(indexPage));
+  cardsSection.renderItems(showcase.getIndexesPage(indexPage));
 }
-
-// popup for cards
-function handleCardClick(e) {
-  if (e.target.closest('.card')) {
-    let clickedCardId = e.target.closest('.card').getAttribute('data-id');
-    let clickedCardData = getClickedData(clickedCardId);
-
-    renderCardPopupWindow(clickedCardData);
-  }
-}
-
-const getClickedData = (id) => {
-  return dataPets.find((card) => card.id == id);
-};
-
-const renderCardPopupWindow = (cardData) => {
-  let popupCard = new PopupCard('card-popup', cardData);
-  popupCard.renderPopupCard();
-};
 
 // получение ширины страницы и количества карточек для отрисовки
 let screenWidth = function getWidth() {

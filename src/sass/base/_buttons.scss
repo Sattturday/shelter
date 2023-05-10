@@ -13,12 +13,29 @@
   @include h3-title;
   font-weight: 700;
   color: $color-dark-3xl;
+  z-index: 1;
+  &_left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &_right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 
   @include slider-s {
     &_left {
+      position: relative;
+      transform: translate(0, 0);
       order: 2;
     }
     &_right {
+      position: relative;
+      transform: translate(0, 0);
       order: 3;
     }
   }

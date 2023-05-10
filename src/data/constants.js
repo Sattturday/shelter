@@ -26,10 +26,9 @@ export const paginationButtonEnd = document.querySelector(
 );
 
 // slider
-export const containerSelectorSlider = '.slider__track';
+export const containerSliderSelector = '.slider__track';
 export const btnLeftSlider = document.querySelector('.slider__btn_left');
 export const btnRightSlider = document.querySelector('.slider__btn_right');
-export const carousel = document.querySelector('.slider__track');
 export const itemLeftSelector = '#item-left';
 export const itemRightSelector = '#item-right';
 export const itemActiveSelector = '#item-active';

@@ -2,13 +2,6 @@
   width: 100%;
 }
 
-.header,
-.not-only {
-  background: url(../../assets/images/noise_transparent.png),
-    radial-gradient(circle farthest-corner at top left, #5b483a 0%, #262425 60%);
-  background-attachment: fixed;
-}
-
 .not-only__container {
   display: flex;
   justify-content: space-between;
