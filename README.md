@@ -6,6 +6,8 @@
 - Работа выполнена в рамках курса JavaScript/Front-end 2023Q1 RSSchool по [Макету в figma](https://www.figma.com/file/Yk6EnbY63FyG2PJTFkJDMh/shelter)
 - Открыть в браузере [сайт Shelter](https://sattturday.github.io/shelter/main.html)
 
+<img src="https://github.com/Sattturday/Sattturday/blob/main/Cozy_House.gif" alt="cat" width="600">
+
 ## Ключевые навыки:
 
 - валидная семантическая адаптивная вёрстка
